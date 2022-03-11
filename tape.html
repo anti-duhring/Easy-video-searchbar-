@@ -1,0 +1,108 @@
+<html>
+   <head>
+      <!-- HTML 4 -->
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <!-- HTML5 -->
+      <meta charset="utf-8"/>
+
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <link rel="stylesheet" href="https://jqueryui.com/jquery-wp-content/themes/jqueryui.com/style.css">
+
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="script/getTape.js" defer></script>
+      <style>
+         @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+      </style>
+      <title>Big Board Draft Cougars</title>
+      <link rel="stylesheet" href="style/css.css">
+      <link rel="icon" type="image/x-icon" href="style/imagens/ball.png">
+      <script>
+         jQuery(document).ready(function(){
+         $(".nav a").on("click", function () {
+             var position = $(this).parent().position();
+             var width = $(this).parent().width();
+         	jQuery(".nav li a").css("color","#191919");
+         	jQuery(this).css('color','white');
+             $(".nav .slide1").css({ opacity: 1, left: +position.left, width: width });
+         });
+
+         $(".nav a").on("mouseover", function () {
+             var position = $(this).parent().position();
+             var width = $(this).parent().width();
+             $(".nav .slide2").css({
+                 opacity: 1,
+                 left: +position.left,
+                 width: width
+             });
+         });
+
+         $(".nav a").on("mouseout", function () {
+             $(".nav .slide2").css({ opacity: 0 });
+         });
+
+         var currentWidth = $(".nav").find("li:nth-of-type(2) a").parent("li").width();
+         var current = $("li:nth-of-type(2) a").position();
+         $(".nav .slide1").css({ left: +current.left , width: currentWidth });
+         });
+
+      </script>
+	  <style>
+	  .content-prospect{
+	      top: 640px;
+		  }
+		  .info-content {
+    /* padding-top: 10px; */
+    text-align: center;
+    font-size: 24;
+}
+
+
+
+img.img-cut {
+    margin-top: -10px;
+}
+	  </style>
+
+   </head>
+   <body>
+         <div class="header" id="hdear"></div>
+         <div class="body">
+            <div class="menu">
+               <ul class="nav">
+                  <li><a href="home.html">Prospectos</a></li>
+                  <li><a href="tape.html" style="color:white;">Tape</a></li>
+                  <li><a href="adicionar.html">Sobre</a></li>
+                  <li><a href="positions.html" >Posições</a></li>
+
+                  <li class="slide1" style="left: 912.425px; width: 161px;"></li>
+                  <li class="slide2" style="opacity: 0; left: 915.763px; width: 158px;"></li>
+               </ul>
+            </div>
+            <div class="body-content">
+              <div class="search-tape">
+                <div class="card-search-tape">
+                  <label for="prospect">Pesquisar por prospecto:</label>
+                  <input type="text" id="name-tape-search" name="prospect" value="" placeholder="Nome...">
+                  <button type="button" name="search-tape" id="search-button" class="butt">Pesquisar</button>
+                </div>
+                <div class="search-info">
+                  <p>Nome: <span id="name-info" class="search-info-infos"></span></P>
+                  <p>Universidade: <span id="college-info" class="search-info-infos"></span></P>
+                  <p>Posição: <span id="position-info" class="search-info-infos"></span></P>
+                </div>
+              </div>
+
+               <div id="tape-grid">
+
+               </div>
+
+            </div>
+         </div>
+         <div class="bottom" id="bttom">
+            <div class="copyright">Desenvolvido por @anti_duhring © 2022</div>
+         </div>
+
+
+   </body>
+</html>
